@@ -3,7 +3,7 @@
 		<h1>Data Barang</h1>
 		<div class="card">
 			<div class="card-header bg-success text-white ">
-				DATA Barang <a href="index.php?page=addakademik" class="btn btn-sm btn-primary float-right">Tambah</a>
+				DATA Barang <a href="index.php?page=add_barang" class="btn btn-sm btn-primary float-right">Tambah</a>
 			</div>
 			<div class="card-body">
 				<table class="table table-bordered">

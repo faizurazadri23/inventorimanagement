@@ -60,8 +60,8 @@
 
                         if($_GET['page']=="barang" || $_GET['page']=='home'){
                             include ("list_barang.php");
-                        }else if($_GET['page']=="addakademik"){
-                            include ("akademik.php");
+                        }else if($_GET['page']=="add_barang"){
+                            include ("add_barang.php");
                         }else if($_GET['page']=="edit"){
                             include ("edit.php");
                         }else{
