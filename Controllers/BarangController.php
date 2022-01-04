@@ -1,5 +1,7 @@
 <?php
 
+include '../database/database.php';
+
 class Barang extends Database{
 
 
@@ -14,6 +16,7 @@ class Barang extends Database{
         $query = $this->db->prepare("SELECT * FROM barang");
         $query->execute();
         $data = $query->fetchAll();
+        
         return $data;
     }
 
