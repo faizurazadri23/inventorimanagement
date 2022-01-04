@@ -4,23 +4,24 @@ class Database{
     private $host = 'localhost';
     private $user = 'root';
     private $pass = '';
-    private $db = 'inventory_management';
+    private $database = 'inventory_management';
 
-    protected $conn;
+    protected $db;
 
     function __construct()
     {
-        if(!isset($this->conn)){
-            $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->db);
+        if(!isset($this->db)){
+            $this->db = new PDO("mysql:host={$this->host};dbname={$this->database}", $this->user, $this->pass);
+            
         }
 
-        if(!$this->conn){
+        if(!$this->db){
             echo ('Koneksi gagal');
 
             die();
         }
 
-        return $this->conn;
+        return $this->db;
     }
 }
     
