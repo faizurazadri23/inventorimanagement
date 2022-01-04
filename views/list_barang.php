@@ -22,14 +22,13 @@
 					</thead>
 					<tbody>
 						<?php
-							include '../Controllers/BarangController.php'; //memanggil file koneksi
+							include '../Controllers/BarangController.php'; //memanggil class Barang Controller
 
 							$barang = new Barang;
 
 							$data_barang = $barang->readData();
 
-							//$data_mhs = mysqli_query($koneksi, "select * from mahasiswa") or die(mysqli_error($koneksi));
-							//script untuk menampilkan data mahasiswa
+							
 
 							$no = 1;//untuk pengurutan nomor
 
@@ -39,7 +38,7 @@
 
 					<tr>
 						<td><?= $no; ?></td>
-						<td><?= $row['kode_barang']; //untuk menampilkan nim ?></td>
+						<td><?= $row['kode_barang']; ?></td>
 						<td><?= $row['nama_barang']; ?></td>
 						<td><?= $row['satuan']; ?></td>
                         <td><?= $row['id_jenis']; ?></td>

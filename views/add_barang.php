@@ -23,7 +23,7 @@
 
                     <div class="form-group">
                         <label for="sel1">Pilih Jenis Barang:</label>
-                        <select class="form-control" id="sel1" name="gender">
+                        <select class="form-control" id="sel1" name="jenis_barang">
                             <!-- <option value="L">Laki-Laki</option>
                             <option value="P">Perempuan</option> -->
                         </select>
@@ -31,7 +31,7 @@
 
                     <div class="form-group">
                         <label for="sel1">Pilih Supplier Barang:</label>
-                        <select class="form-control" id="sel1" name="gender">
+                        <select class="form-control" id="sel1" name="supplier_barang">
                             <!-- <option value="L">Laki-Laki</option>
                             <option value="P">Perempuan</option> -->
                         </select>
@@ -51,6 +51,24 @@
 
                     <a class="btn btn-default" href="index.php?page=barang" role="button">Lihat data</a>
 				</form>
+
+                <?php
+				   include '../Controllers/BarangController.php';
+				
+				//melakukan pengecekan jika button submit diklik maka akan menjalankan perintah simpan dibawah ini
+				if (isset($_POST['submit'])) {
+					$crud = new Barang();
+
+					$hasil = $crud->createData($_POST['kode_barang'],$_POST['nama_barang'], $_POST['satuan'], $_POST['jenis_barang'], $_POST['supplier_barang'],  $_POST['harga'], $_POST['stok']);
+
+					if($hasil){
+						echo "<script>alert('data berhasil disimpan.');window.location='index.php?page=barang';</script>";
+					}else{
+						echo "<script>alert('data gagal disimpan.');</script>";
+					}
+					
+				}
+				?>
 			</div>
 
 			
