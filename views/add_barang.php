@@ -21,19 +21,44 @@
 						<input type="text" name="satuan" class="form-control">
 					</div>
 
+					<?php
+						include '../Controllers/JenisController.php'; //memanggil class Barang Controller
+
+						$jenis_barang = new Jenis();
+
+						$data_jenis_barang = $jenis_barang->readData();
+
+						foreach($data_jenis_barang as $row) {
+					?>
+
                     <div class="form-group">
                         <label for="sel1">Pilih Jenis Barang:</label>
                         <select class="form-control" id="sel1" name="jenis_barang">
-                            <!-- <option value="L">Laki-Laki</option>
-                            <option value="P">Perempuan</option> -->
+
+						<?php echo "<option value=".$row['id']. ">" .$row['nama_jenis']. "</option>";?>
+						
+						<?php  } ?>
+						
                         </select>
                     </div> 
+
+					<?php
+						include '../Controllers/SupplierController.php'; //memanggil class Barang Controller
+
+						$supplier_barang = new Supplier();
+
+						$data_supplier_barang = $supplier_barang->readData();
+
+						foreach($data_supplier_barang as $row) {
+					?>
 
                     <div class="form-group">
                         <label for="sel1">Pilih Supplier Barang:</label>
                         <select class="form-control" id="sel1" name="supplier_barang">
-                            <!-- <option value="L">Laki-Laki</option>
-                            <option value="P">Perempuan</option> -->
+                            
+							<?php echo "<option value=".$row['id']. ">" .$row['nama_supplier']. "</option>";?>
+							
+							<?php  } ?>
                         </select>
                     </div> 
 

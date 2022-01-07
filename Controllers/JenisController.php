@@ -3,7 +3,7 @@
 
 include_once('../database/database.php');
 
-class Supplier extends Database{
+class Jenis extends Database{
 
 
     function __construct()
@@ -13,7 +13,7 @@ class Supplier extends Database{
 
     //fungsi untuk menampilkan data
     public function readData(){
-        $query = $this->db->prepare("SELECT * FROM supplier");
+        $query = $this->db->prepare("SELECT * FROM jenis");
         $query->execute();
         $data = $query->fetchAll();
         
@@ -21,13 +21,11 @@ class Supplier extends Database{
     }
 
     //digunakan untuk menambahkan data barang baru
-    public function createData($nama_supplier, $notelp, $email, $alamat){
-        $data = $this->db->prepare('INSERT INTO supplier (nama_supplier, notelp, email, alamat) VALUES (?, ?,?,?)');
+    public function createData($nama_jenis, $keterangan){
+        $data = $this->db->prepare('INSERT INTO barang (nama_jenis,keterangan) VALUES (?, ?)');
         
-        $data->bindParam(1, $nama_supplier);
-        $data->bindParam(2, $notelp);
-        $data->bindParam(3, $email);
-        $data->bindParam(4, $alamat);
+        $data->bindParam(1, $nama_jenis);
+        $data->bindParam(2, $keterangan);
         
         $data->execute();
         
@@ -38,16 +36,14 @@ class Supplier extends Database{
         }
     }
 
-    public function updateData($id, $nama_supplier, $notelp, $email, $alamat){
+    public function updateData($id, $nama_jenis, $keterangan){
         
-        $query = $this->db->prepare('UPDATE supplier set nama_supplier=?,notelp=?,email=?,alamat=? where id=?');
+        $query = $this->db->prepare('UPDATE jenis set nama_jenis=?,keterangan=? where id=?');
         
         
-        $query->bindParam(1, $nama_supplier);
-        $query->bindParam(2, $notelp);
-        $query->bindParam(3, $email);
-        $query->bindParam(4, $alamat);
-        $query->bindParam(5, $id);
+        $query->bindParam(1, $nama_jenis);
+        $query->bindParam(2, $keterangan);
+        $query->bindParam(3, $id);
 
         $query->execute();
 
@@ -60,7 +56,7 @@ class Supplier extends Database{
     }
 
     public function get_by_id($id){
-        $query = $this->db->prepare("SELECT * FROM supplier where id=?");
+        $query = $this->db->prepare("SELECT * FROM jenis where id=?");
         $query->bindParam(1, $id);
         $query->execute();
         return $query->fetch();
@@ -68,7 +64,7 @@ class Supplier extends Database{
 
     public function deleteData($id){
 
-        $query = $this->db->prepare("DELETE FROM supplier where id=?");
+        $query = $this->db->prepare("DELETE FROM jenis where id=?");
 
         $query->bindParam(1, $id);
 

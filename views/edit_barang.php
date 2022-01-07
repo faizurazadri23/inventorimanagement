@@ -27,11 +27,15 @@
                             <!-- <option value="L">Laki-Laki</option>
                             <option value="P">Perempuan</option> -->
                         </select>
-                    </div> 
+                    </div>
+					
+					
 
                     <div class="form-group">
                         <label for="sel1">Pilih Supplier Barang:</label>
                         <select class="form-control" id="sel1" name="supplier_barang">
+							
+
                             <!-- <option value="L">Laki-Laki</option>
                             <option value="P">Perempuan</option> -->
                         </select>

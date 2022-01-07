@@ -1,6 +1,6 @@
 <?php
 
-include '../database/database.php';
+include_once('../database/database.php');
 
 class Barang extends Database{
 
