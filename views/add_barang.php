@@ -1,7 +1,7 @@
 
 	<div class="col-sm">
 		<h1>Tambah Data Barang</h1>
-		<div class="card">
+		<div class="card" >
 			<div class="card-header bg-success text-white ">
 				Tambah Data Barang <a href="index.php?page=barang" class="btn btn-sm btn-primary float-right">Lihat</a>
 			</div>
