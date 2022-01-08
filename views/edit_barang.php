@@ -98,7 +98,7 @@
 					
                     <div class="form-group">
                         <label for="sel1">Pilih Jenis Barang:</label>
-                        <select class="form-control" id="sel1" name="jenis_barang" value="<?= $row['id_jenis']; ?>">
+                        <select class="form-control" id="sel1" name="jenis_barang">
 
 						<?php
 							include '../Controllers/JenisController.php'; //memanggil class Barang Controller
@@ -107,8 +107,15 @@
 
 							$data_jenis_barang = $jenis_barang->readData();
 
-							foreach($data_jenis_barang as $row) {
-								echo "<option value=".$row['id']. ">" .$row['nama_jenis']. "</option>";
+							foreach($data_jenis_barang as $row_jenis_barang) {
+							?>	
+								<option value="<?php echo $row_jenis_barang['id']; ?>" <?php
+								if ($row_jenis_barang['id'] == $row['id_jenis']) {
+									echo 'selected="selected"';
+								}
+								?> > <?php echo $row_jenis_barang['nama_jenis']; ?></option>
+							<?php
+								
 							}
 						?>
 						
@@ -127,8 +134,15 @@
 
 							$data_supplier_barang = $supplier_barang->readData();
 
-							foreach($data_supplier_barang as $row) {
-								echo "<option value=".$row['id']. ">" .$row['nama_supplier']. "</option>";
+							foreach($data_supplier_barang as $row_supplier) {
+								?>
+								<option value="<?php echo $row_supplier['id']; ?>" <?php
+								if ($row_supplier['id'] == $row['id_supplier']) {
+									echo 'selected="selected"';
+								}
+								?> > <?php echo $row_supplier['nama_supplier']; ?></option>
+							<?php
+								
 							}
 					
 						?>
