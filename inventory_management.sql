@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2022 at 01:40 PM
+-- Generation Time: Jan 08, 2022 at 04:53 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -44,7 +44,8 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id`, `kode_barang`, `nama_barang`, `satuan`, `id_jenis`, `id_supplier`, `harga`, `stok`) VALUES
-(1, 'A0001', 'Indomie', 'Dus', 1, 1, 50000, 200);
+(1, 'A0001', 'Indomies', 'dus', 4, 3, 120000, 14242),
+(3, 'A0002', 'Slai Olai Terbaru', 'Pcss', 4, 4, 120000, 12);
 
 -- --------------------------------------------------------
 
@@ -63,7 +64,9 @@ CREATE TABLE `jenis` (
 --
 
 INSERT INTO `jenis` (`id`, `nama_jenis`, `keterangan`) VALUES
-(1, 'Makanan', 'Barang-barang dalam bentuk makanan');
+(1, 'Pakaian', 'Salah satu bentuk barang yang tergolong sebagai ba'),
+(3, 'Minuman', 'Berbagai minuman'),
+(4, 'Makanan', 'tergolong ke dalam sebuah barang yang ekonomis');
 
 -- --------------------------------------------------------
 
@@ -84,7 +87,9 @@ CREATE TABLE `supplier` (
 --
 
 INSERT INTO `supplier` (`id`, `nama_supplier`, `notelp`, `email`, `alamat`) VALUES
-(1, 'CV Nusa Sembako', '62424242', 'nusasembako@gmail.com', 'Jakarta Selatan');
+(1, 'CV Nusa Sembako', '08527266763', 'nusasembako@gmail.com', 'Jakarta Timur'),
+(3, 'Nana', '0852726673232', 'nanagroup@gmail.com', 'Bali'),
+(4, 'meratusGroup', '08527266732', 'support@meraturs.com', 'Jln Pemuda No 13 A, Bandung');
 
 --
 -- Indexes for dumped tables
@@ -118,19 +123,19 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `jenis`
 --
 ALTER TABLE `jenis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
