@@ -32,7 +32,6 @@ class Barang extends Database{
         $data->bindParam(6, $harga);
         $data->bindParam(7, $stock);
         
-
         $data->execute();
         
         if($data){

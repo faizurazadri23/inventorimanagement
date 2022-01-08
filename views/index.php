@@ -32,11 +32,11 @@
                         
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="supplier.php?page=supplier">Supplier</a>
+                        <a class="nav-link" href="index.php?page=supplier">Supplier</a>
                         
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="jenis.php?page=jenis">Jenis</a>
+                        <a class="nav-link" href="index.php?page=jenis">Jenis</a>
                         
                         </li>
                         
@@ -62,10 +62,18 @@
                             include ("list_barang.php");
                         }else if($_GET['page']=="add_barang"){
                             include ("add_barang.php");
-                        }else if($_GET['page']=="edit"){
-                            include ("edit.php");
-                        }else{
-                            include "home.php";
+                        }else if($_GET['page']=="supplier"){
+                            include ("list_supplier.php");
+                        }else if($_GET['page'] == "add_supplier"){
+                            include ("add_supplier.php");
+                        }else if($_GET['page'] == "edit_supplier"){
+                            include ("edit_supplier.php");
+                        }else if($_GET['page'] == "edit_barang"){
+                            include ("edit_barang.php");
+                        }else if($_GET['page'] == "jenis"){
+                            include ("list_jenis.php");
+                        }else if($_GET['page'] == "add_jenis"){
+                            include ("add_jenis.php");
                         }
                 ?>
             </div>

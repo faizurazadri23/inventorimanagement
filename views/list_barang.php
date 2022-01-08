@@ -46,7 +46,7 @@
                         <td><?= $row['harga']; ?></td>
                         <td><?= $row['stok']; ?></td>
 						<td>
-								<a href="edit_barang.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-warning">Ubah</a>
+								<a href="index.php?page=edit_barang".?id=<?= $row['id']; ?> class="btn btn-sm btn-warning">Ubah</a>
 								<a href="delete_barang.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('anda yakin ingin hapus?');">Hapus</a>
 								
 						</td>
