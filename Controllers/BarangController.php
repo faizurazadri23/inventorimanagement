@@ -13,7 +13,7 @@ class Barang extends Database{
 
     //fungsi untuk menampilkan data
     public function readData(){
-        $query = $this->db->prepare("SELECT * FROM barang");
+        $query = $this->db->prepare("SELECT barang.*, jenis.nama_jenis, jenis.id as id_jenis,supplier.id as id_supplier, supplier.nama_supplier FROM barang INNER JOIN jenis ON barang.id_jenis = jenis.id INNER JOIN supplier ON barang.id_supplier = supplier.id");
         $query->execute();
         $data = $query->fetchAll();
         
@@ -22,7 +22,7 @@ class Barang extends Database{
 
     //digunakan untuk menambahkan data barang baru
     public function createData($kode_barang, $nama_barang, $satuan, $id_jenis, $id_supplier, $harga, $stock){
-        $data = $this->db->prepare('INSERT INTO barang (kode_barang,nama_barang,satuan,id_jenis,id_supplier,harga, stock) VALUES (?, ?, ?, ?, ?, ?, ?)');
+        $data = $this->db->prepare('INSERT INTO barang (kode_barang,nama_barang,satuan,id_jenis,id_supplier,harga,stok) VALUES (?, ?, ?, ?, ?, ?, ?)');
         
         $data->bindParam(1, $kode_barang);
         $data->bindParam(2, $nama_barang);
@@ -43,7 +43,7 @@ class Barang extends Database{
 
     public function updateData($id, $kode_barang, $nama_barang, $satuan, $id_jenis, $id_supplier, $harga, $stock){
         
-        $query = $this->db->prepare('UPDATE barang set kode_barang=?,nama_barang=?,satuan=?,id_jenis=?,id_supplier=?, harga=?, stock=? where nim=?');
+        $query = $this->db->prepare('UPDATE barang set kode_barang=?,nama_barang=?,satuan=?,id_jenis=?,id_supplier=?, harga=?, stok=? where id=?');
         
         
         $query->bindParam(1, $kode_barang);

@@ -6,12 +6,14 @@
 				Data Jenis Barang <a href="index.php?page=add_jenis" class="btn btn-sm btn-primary float-right">Tambah</a>
 			</div>
 			<div class="card-body">
-				<table class="table table-bordered">
+				<div class="table-responsive">
+				<table class="table table-striped">
 					<thead>
 						<tr>
 							<th>No</th>
 							<th>Nama Jenis</th>
 							<th>Keterangan</th>
+							<th>Aksi</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -36,7 +38,7 @@
 						<td><?= $row['keterangan']; ?></td>
                        
 						<td>
-								<a href="index.php?page=edit_jenis" . ?id=<?= $row['id']; ?> class="btn btn-sm btn-warning">Ubah</a>
+								<a href="edit_jenis.php?id_jenis=<?= $row['id']; ?>" class="btn btn-sm btn-warning">Ubah</a>
 								<a href="delete_jenis.php?id=<?= $row['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('anda yakin ingin hapus?');">Hapus</a>
 								
 						</td>
@@ -45,6 +47,7 @@
 						<?php $no++; } ?>
 					</tbody>
 				</table>
+				</div>
 			</div>
 
 			

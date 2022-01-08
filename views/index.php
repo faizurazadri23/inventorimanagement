@@ -10,8 +10,8 @@
 <body>
 
     <div class="container">
-        <div class="row">
-            <div class="col-sm">
+        <div class="row justify-content-md">
+            <div class="col-md-auto">
       
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -53,9 +53,10 @@
                 </nav>
             
             </div>
+        </div>
 
-        <div class="row">
-            <div class="col-sm">
+        
+            <div class="col-md-auto">
                 <?php
 
                         if($_GET['page']=="barang" || $_GET['page']=='home'){
@@ -66,10 +67,6 @@
                             include ("list_supplier.php");
                         }else if($_GET['page'] == "add_supplier"){
                             include ("add_supplier.php");
-                        }else if($_GET['page'] == "edit_supplier"){
-                            include ("edit_supplier.php");
-                        }else if($_GET['page'] == "edit_barang"){
-                            include ("edit_barang.php");
                         }else if($_GET['page'] == "jenis"){
                             include ("list_jenis.php");
                         }else if($_GET['page'] == "add_jenis"){

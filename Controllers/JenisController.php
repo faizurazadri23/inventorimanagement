@@ -22,7 +22,7 @@ class Jenis extends Database{
 
     //digunakan untuk menambahkan data barang baru
     public function createData($nama_jenis, $keterangan){
-        $data = $this->db->prepare('INSERT INTO barang (nama_jenis,keterangan) VALUES (?, ?)');
+        $data = $this->db->prepare('INSERT INTO jenis (nama_jenis,keterangan) VALUES (?, ?)');
         
         $data->bindParam(1, $nama_jenis);
         $data->bindParam(2, $keterangan);
