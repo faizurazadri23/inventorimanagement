@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2022 at 04:53 AM
+-- Generation Time: Jan 23, 2022 at 11:39 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -44,8 +44,8 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`id`, `kode_barang`, `nama_barang`, `satuan`, `id_jenis`, `id_supplier`, `harga`, `stok`) VALUES
-(1, 'A0001', 'Indomies', 'dus', 4, 3, 120000, 14242),
-(3, 'A0002', 'Slai Olai Terbaru', 'Pcss', 4, 4, 120000, 12);
+(4, 'H733', 'Minyak goreng 2 liter bimoli', 'Liter', 8, 7, 72000, 2000),
+(5, 'BTK002', 'Kemeja batik lengan panjang', 'Pcs', 8, 7, 57000, 73200);
 
 -- --------------------------------------------------------
 
@@ -64,9 +64,8 @@ CREATE TABLE `jenis` (
 --
 
 INSERT INTO `jenis` (`id`, `nama_jenis`, `keterangan`) VALUES
-(1, 'Pakaian', 'Salah satu bentuk barang yang tergolong sebagai ba'),
-(3, 'Minuman', 'Berbagai minuman'),
-(4, 'Makanan', 'tergolong ke dalam sebuah barang yang ekonomis');
+(8, 'Baju Batik', ' Batik adalah kain Indonesia bergambar yang pembua'),
+(9, 'Minyak Goreng', ' Minyak masakan adalah minyak atau lemak yang bera');
 
 -- --------------------------------------------------------
 
@@ -87,9 +86,12 @@ CREATE TABLE `supplier` (
 --
 
 INSERT INTO `supplier` (`id`, `nama_supplier`, `notelp`, `email`, `alamat`) VALUES
-(1, 'CV Nusa Sembako', '08527266763', 'nusasembako@gmail.com', 'Jakarta Timur'),
-(3, 'Nana', '0852726673232', 'nanagroup@gmail.com', 'Bali'),
-(4, 'meratusGroup', '08527266732', 'support@meraturs.com', 'Jln Pemuda No 13 A, Bandung');
+(1, 'UD. Busana Agung', '082147596315', 'udbusanaagung@gmail.com', 'Jalan. Gunung Tangkuban Perahu No.15H, Kerobokan, Badung, Bali, Indonesia'),
+(5, 'CV Rajasa Mas Jaya', '082221333785', 'rajasamasjaya@gmail.com', ' Jl. Penatusan timur 261 RT09 RW01 Ds Maos Kidul Kec Maos Kabupaten Cilacap Jateng, Cilacap, Jawa Te'),
+(6, 'Toko Kana Fashion', '083142341242', 'kanafashion@gmail.com', ' JL. Rajawali JMP 2 Lantai 1 Blok B No. 23-24, 27-28 Surabaya, Surabaya, Jawa Timur, Indonesia'),
+(7, 'Toko Batik Iman', '085273341942', 'batikiman@gmail.com', ' Jl. Kebon Kacang 9 No.3 Tanah Abang , Jakarta Pusat, Jakarta Pusat, DKI Jakarta, Indonesia'),
+(8, 'UD. Rumah Batik Jawa Timur', '081284742125', 'batikjatim@gmail.com', 'JL. Dukuh Bulak Banteng Timur No. 94 Surabaya, Surabaya, Jawa Timur, Indonesia '),
+(9, 'Minyakindo', '082316669048', 'minyakindo@gmail.com', ' Jl. Pluit Karang Karya Tim. No.2, RT.23/RW.8, Penjaringan, Kec. Penjaringan, Kota Jkt Utara, Daerah');
 
 --
 -- Indexes for dumped tables
@@ -123,19 +125,19 @@ ALTER TABLE `supplier`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `jenis`
 --
 ALTER TABLE `jenis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `supplier`
 --
 ALTER TABLE `supplier`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
