@@ -26,6 +26,8 @@ $(function(){
                 $('#harga').val(data.harga);
                 $('#stok').val(data.stok);
                 $('#id').val(data.id); 
+            }, error: function(){
+                alert("Terjadi kesalahan");
             }
         });
     });
@@ -83,6 +85,8 @@ $(function(){
                 $('#alamat').val(data.alamat);
                 $('#id').val(data.id);
                 // console.log(data);
+            }, error: function(){
+                alert("Terjadi kesalahan");
             }
         });
     });
