@@ -55,6 +55,8 @@ $(function(){
                 $('#keterangan').val(data.keterangan);
                 $('#id').val(data.id);
                 // console.log(data);
+            }, error: function(){
+                alert("Terjadi kesalahan");
             }
         });
     });
